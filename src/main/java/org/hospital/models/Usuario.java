@@ -12,7 +12,7 @@ package org.hospital.models;
 public class Usuario {
     
     Long id;
-    int cedulaU;
+    long cedulaU;
     String pass;
 
     public Usuario() {
@@ -31,11 +31,11 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getCedulaU() {
+    public long getCedulaU() {
         return cedulaU;
     }
 
-    public void setCedulaU(int cedulaU) {
+    public void setCedulaU(long cedulaU) {
         this.cedulaU = cedulaU;
     }
 

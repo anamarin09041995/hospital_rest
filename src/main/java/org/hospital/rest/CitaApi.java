@@ -51,7 +51,7 @@ public class CitaApi {
                     , method = RequestMethod.GET
                     , produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Cita> all(@PathVariable long cedula){
+    public ResponseEntity<List<Cita>> all(@PathVariable long cedula){
         List<Cita> cita = citaServiceImp.all(cedula);
         if(cita == null)
             return new ResponseEntity(HttpStatus.NOT_FOUND);

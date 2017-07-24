@@ -35,16 +35,17 @@ public class CitaApi {
         this.citaServiceImp = citaServiceImp;
     }
     
+    /*
     @RequestMapping(path = "/citas/{id}"
-                    , method = RequestMethod.GET
-                    , produces = MediaType.APPLICATION_JSON_VALUE
+            , method = RequestMethod.GET
+            , produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Cita> getById(@PathVariable Long id){
         Cita cita = citaServiceImp.getById(id);
         if(cita == null)
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity(HttpStatus.NOT_FOUND);        
         return new ResponseEntity(cita, HttpStatus.OK);
-    }
+    }*/
     
     @RequestMapping(path = "/citas/{cedula}"
                     , method = RequestMethod.GET

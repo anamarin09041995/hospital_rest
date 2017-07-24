@@ -14,12 +14,12 @@ public class Medico {
     Long id;
     String nombre, especialidad;
     boolean activo;
-    int cedula;
+    long cedula;
 
     public Medico() {
     }
 
-    public Medico(String nombre, String especialidad, boolean activo, int cedula) {
+    public Medico(String nombre, String especialidad, boolean activo, long cedula) {
         this.nombre = nombre;
         this.especialidad = especialidad;
         this.activo = activo;
@@ -58,11 +58,11 @@ public class Medico {
         this.activo = activo;
     }
 
-    public int getCedula() {
+    public long getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(long cedula) {
         this.cedula = cedula;
     }
     

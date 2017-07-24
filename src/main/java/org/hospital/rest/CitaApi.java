@@ -5,6 +5,8 @@
  */
 package org.hospital.rest;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.List;
 import org.hospital.models.Cita;
 import org.hospital.models.PostResponse;

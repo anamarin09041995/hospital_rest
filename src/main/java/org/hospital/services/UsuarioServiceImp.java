@@ -5,6 +5,11 @@
  */
 package org.hospital.services;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import org.hospital.models.Cita;
@@ -18,12 +23,44 @@ import org.springframework.stereotype.Service;
 @Service 
 public class UsuarioServiceImp implements UsuarioService{
 
-    private static List<Usuario> data = new ArrayList<>();
+    private final static String INSERT = "INSERT INTO usuarios(ceddulaU, pass) VALUES (?,?);";
+    
+    Connection con;
+    PreparedStatement statement;
     
     @Override
     public void insert(Usuario usuario) {
-       usuario.setId(System.currentTimeMillis());
-       data.add(usuario);
+        try {
+            con = connect();
+            statement = con.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
+            statement.setLong(1, usuario.getCedulaU());
+            statement.setString(2, usuario.getPass());     
+            
+            
+            long id = statement.executeUpdate();
+            usuario.setId(id);
+            closeConnection();
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
+    
+     private Connection connect() throws SQLException{
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "root");
+        return con;
+    }
+     
+     private void closeConnection() throws SQLException{
+         if(statement != null)
+             statement.close();
+         
+         if(con != null){
+             con.close();
+         }
+         
+         statement = null;
+         con = null;
+     }
     
 }

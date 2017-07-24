@@ -15,7 +15,7 @@ import org.hospital.models.Medico;
 public interface MedicoService {
     void insert(Medico medico);
     boolean update(Medico medico);
-    Medico getById(Long id);
+    Medico getById(long cedula);
     List<Medico> all();
     
 }

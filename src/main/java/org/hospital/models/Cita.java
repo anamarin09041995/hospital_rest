@@ -15,16 +15,15 @@ public class Cita {
     Long id;
     String nombreP, nombreD,  diagnostico, foto;
     long cedulaP, cedulaD;
-    Date hora, fecha;
+    String fecha;
 
     public Cita() {
     }
 
-    public Cita(String nombreP, String nombreD, Date fecha, Date hora, String diagnostico, String foto, long cedulaP, long cedulaD) {
+    public Cita(String nombreP, String nombreD, String fecha, String diagnostico, String foto, long cedulaP, long cedulaD) {
         this.nombreP = nombreP;
         this.nombreD = nombreD;
         this.fecha = fecha;
-        this.hora = hora;
         this.diagnostico = diagnostico;
         this.foto = foto;
         this.cedulaP = cedulaP;
@@ -55,22 +54,14 @@ public class Cita {
         this.nombreD = nombreD;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
-    public Date getHora() {
-        return hora;
-    }
-
-    public void setHora(Date hora) {
-        this.hora = hora;
-    }
-
+    
     public String getDiagnostico() {
         return diagnostico;
     }

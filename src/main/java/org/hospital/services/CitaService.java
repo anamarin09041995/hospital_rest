@@ -17,5 +17,5 @@ public interface CitaService {
     boolean update(Cita cita);
     boolean delete(Long id);
     Cita getById(Long id);
-    List<Cita> all(int cedulaD);
+    List<Cita> all(long cedulaD);
 }

@@ -69,7 +69,7 @@ public class CitaServiceImp implements CitaService{
     }
 
     @Override
-    public List<Cita> all(int cedulaD) {
+    public List<Cita> all(long cedulaD) {
       
         List<Cita> citas = new ArrayList<>();
         int index = 0;

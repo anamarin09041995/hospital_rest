@@ -14,13 +14,13 @@ import java.util.Date;
 public class Cita {
     Long id;
     String nombreP, nombreD,  diagnostico, foto;
-    int cedulaP, cedulaD;
+    long cedulaP, cedulaD;
     Date hora, fecha;
 
     public Cita() {
     }
 
-    public Cita(String nombreP, String nombreD, Date fecha, Date hora, String diagnostico, String foto, int cedulaP, int cedulaD) {
+    public Cita(String nombreP, String nombreD, Date fecha, Date hora, String diagnostico, String foto, long cedulaP, long cedulaD) {
         this.nombreP = nombreP;
         this.nombreD = nombreD;
         this.fecha = fecha;
@@ -87,19 +87,19 @@ public class Cita {
         this.foto = foto;
     }
 
-    public int getCedulaP() {
+    public long getCedulaP() {
         return cedulaP;
     }
 
-    public void setCedulaP(int cedulaP) {
+    public void setCedulaP(long cedulaP) {
         this.cedulaP = cedulaP;
     }
     
-     public int getCedulaD() {
+     public long getCedulaD() {
         return cedulaD;
     }
 
-    public void setCedulaD(int cedulaD) {
+    public void setCedulaD(long cedulaD) {
         this.cedulaD = cedulaD;
     }
     
